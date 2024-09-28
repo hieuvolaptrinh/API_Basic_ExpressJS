@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongoose_delete = require("mongoose-delete");
 const { customerSchema } = require("./customer"); // Import schema từ đối tượng xuất ra
-const { userSchema } = require("./User"); // Import schema từ đối tượng xuất ra
+const { userSchema } = require("./user"); // Import schema từ đối tượng xuất ra
 //shape data
 
 const projectSchema = new mongoose.Schema(
@@ -24,9 +24,9 @@ const projectSchema = new mongoose.Schema(
 );
 
 // Override all methods
-projectSchema.plugin(mongoose_delete, { overrideMethods: "all" });
-
+delete mongoose.models.Project;
 const Project = mongoose.model("Project", projectSchema);
+projectSchema.plugin(mongoose_delete, { overrideMethods: "all" });
 
 module.exports = { Project, projectSchema };
 // const customerSchema = new mongoose.Schema(
