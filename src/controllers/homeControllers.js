@@ -6,7 +6,7 @@ const {
   deleteUserById,
 } = require("../services/CRUDService");
 const { get } = require("../routes/web");
-const { User } = require("../models/User");
+const { User } = require("../models/user");
 
 const getHomePage = async (req, res) => {
   // let [results, fields] = await connection.query("SELECT * FROM Users"); // đưa nó qua CRUDService

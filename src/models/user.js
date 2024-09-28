@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   email: String,
   city: String,
 });
-
+delete mongoose.models.User;
 const User = mongoose.model("User", userSchema);
 
 // module.exports = User;
